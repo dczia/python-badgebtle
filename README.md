@@ -1,5 +1,9 @@
 # DEF CON badge bluetooth libary
 
+[![PyPI version shields.io](https://img.shields.io/pypi/v/badgebtle.svg)](https://pypi.python.org/pypi/badgebtle/) [![PyPI license](https://img.shields.io/pypi/l/badgebtle.svg)](https://pypi.python.org/pypi/badgebtle/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/badgebtle.svg)](https://pypi.python.org/pypi/badgebtle/)
+
+
+
 A library based on bluepy that performs bluetooth scan for DEF CON badges.
 
 ## Usage
