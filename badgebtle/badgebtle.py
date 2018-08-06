@@ -14,7 +14,7 @@ class ScanResult():
         self.rssi = rssi
 
     def __str__(self):
-        return "ScanResult <manufacturer=%s appearance=%s localName=%s rssi=%ddB>" % (self.manufacturer, self,appearance, self.localName, self.rssi)
+        return "ScanResult <manufacturer=%s appearance=%s localName=%s rssi=%ddB>" % (self.manufacturer, self.appearance, self.localName, self.rssi)
 
 class BadgeBTLE():
     def __init__(self, manufacturer=None, appearance=None, scanTimeout=2, fields=[]):
@@ -60,6 +60,6 @@ class BadgeBTLE():
                 if desc.lower() == "complete local name":
                     localName = value
                 if appearance == self.appearance and manufacturer is not None:
-                    neighbors.append((appearance, manufacturer, localName, dev.rssi))
+                    neighbors.append(ScanResult(manufacturer, appearance, localName, dev.rssi))
         self.scanner.clear()
         return neighbors
