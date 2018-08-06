@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="badgebtle",
-    version="0.0.2",
+    version="0.0.1",
     author="Robert Bost",
     description="DEF CON badge bluetooth library",
     long_description=long_description,
