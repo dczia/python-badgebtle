@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="badgebtle",
-    version="0.0.1",
+    version="0.0.2",
     author="Robert Bost",
     description="DEF CON badge bluetooth library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dczia/python-badgebtle",
-    packages=["badgebtle"],
+    packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
