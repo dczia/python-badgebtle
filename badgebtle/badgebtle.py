@@ -7,14 +7,15 @@ from bluepy.btle import Scanner
 DEFAULT_FIELDS = ['appearance', 'manufacturer', 'complete local name']
 
 class ScanResult():
-    def __init__(self, manufacturer, appearance, localName, rssi):
+    def __init__(self, manufacturer, appearance, localName, rssi, addr):
         self.manufacturer = manufacturer
         self.appearance = appearance
         self.localName = localName
+        self.addr = addr
         self.rssi = rssi
 
     def __str__(self):
-        return "ScanResult <manufacturer=%s appearance=%s localName=%s rssi=%ddB>" % (self.manufacturer, self.appearance, self.localName, self.rssi)
+        return "ScanResult <addr=%s manufacturer=%s appearance=%s localName=%s rssi=%ddB>" % (self.addr, self.manufacturer, self.appearance, self.localName, self.rssi)
 
 class BadgeBTLE():
     def __init__(self, manufacturer=None, appearance=None, scanTimeout=2, fields=[]):
@@ -60,6 +61,6 @@ class BadgeBTLE():
                 if desc.lower() == "complete local name":
                     localName = value
                 if appearance == self.appearance and manufacturer is not None:
-                    neighbors.append(ScanResult(manufacturer, appearance, localName, dev.rssi))
+                    neighbors.append(ScanResult(manufacturer, appearance, localName, dev.rssi, dev.addr))
         self.scanner.clear()
         return neighbors
