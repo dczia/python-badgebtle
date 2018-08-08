@@ -36,8 +36,8 @@ class BadgeBTLE():
 
     def __determineAppearance(self):
         year = datetime.now().year
-        dcyear = year - 1992 + 12 # Calculate DEF CON year and convert to hex representation (which is really decimal value).
-        return (dcyear << 2) + 0xdc # Example: 0x26dc
+        dcyear = year - 1992 # Calculate DEF CON year
+        return "dc" + str(dcyear)
 
     def scan(self):
         """Perform Bluetooth scan until timeout and return list of nearby BLE devices
